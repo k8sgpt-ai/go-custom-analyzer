@@ -2,6 +2,7 @@
 
 This is an example of how to extend [k8sgpt](https://github.com/k8sgpt-ai/k8sgpt.git) analyzer with a custom implementation. This enables you to run additional behaviours outside of Kubernetes or with different languages.
 
+[See the related tutorial](https://docs.k8sgpt.ai/tutorials/custom-analyzers/)
 ## How to run 
 
 You will need to run this example locally.
