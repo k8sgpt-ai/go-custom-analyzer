@@ -10,17 +10,17 @@ import (
 )
 
 type Handler struct {
-	rpc.AnalyzerServiceServer
+	rpc.ServerAnalyzerServiceServer
 }
 type Analyzer struct {
 	Handler *Handler
 }
 
-func (a *Handler) Run(context.Context, *v1.AnalyzerRunRequest) (*v1.AnalyzerRunResponse, error) {
+func (a *Handler) Run(context.Context, *v1.RunRequest) (*v1.RunResponse, error) {
 	println("Running analyzer")
 	usage := du.NewDiskUsage("/")
 	diskUsage := int((usage.Size() - usage.Free()) * 100 / usage.Size())
-	return &v1.AnalyzerRunResponse{
+	return &v1.RunResponse{
 		Result: &v1.Result{
 			/*
 				a lowercase RFC 1123 subdomain must consist of lower case alphanumeric characters, '-' or '.', and must start and end with an alphanumeric character (e.g. 'example.com',
