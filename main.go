@@ -23,7 +23,7 @@ func main() {
 	grpcServer := grpc.NewServer()
 	reflection.Register(grpcServer)
 	aa := analyzer.Analyzer{}
-	rpc.RegisterAnalyzerServiceServer(grpcServer, aa.Handler)
+	rpc.RegisterCustomAnalyzerServiceServer(grpcServer, aa.Handler)
 	if err := grpcServer.Serve(
 		lis,
 	); err != nil && !errors.Is(err, http.ErrServerClosed) {
