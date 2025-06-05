@@ -10,7 +10,7 @@ import (
 )
 
 type Handler struct {
-	rpc.ServerAnalyzerServiceServer
+	rpc.CustomAnalyzerServiceServer
 }
 type Analyzer struct {
 	Handler *Handler
